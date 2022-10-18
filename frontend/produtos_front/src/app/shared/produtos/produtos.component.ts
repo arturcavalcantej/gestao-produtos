@@ -12,7 +12,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 export class ProdutosComponent implements OnInit {
   formGroup!: FormGroup;
   formGroupBusca!: FormGroup;
-  bens: Produtos[] = [];
+  produtos: Produtos[] = [];
 
 
   constructor(
@@ -35,16 +35,16 @@ export class ProdutosComponent implements OnInit {
       id_produto: new FormControl(''),
       nome: new FormControl(null),
       status: new FormControl(null),
-      preco: new FormControl(),
-      descricao: new FormControl(),
-      imagem: new FormControl(),
+      preco: new FormControl(null),
+      descricao: new FormControl(null),
+      imagem: new FormControl(null),
     });
   }
 
   private loadProdutos() {
     const params = this.route.snapshot.queryParams;
     this.produtoService.getAll(params).subscribe(res => {
-      this.bens = res;
+      this.produtos = res;
     });
   }
 
@@ -55,7 +55,7 @@ export class ProdutosComponent implements OnInit {
   }
 
   del(id: number){
-    if (confirm("Tem certeza que deseja remover este bem?"))
+    if (confirm("Tem certeza que deseja remover este produto?"))
     this.produtoService.delete(id)
     .subscribe( res=>{
       this.ngOnInit();

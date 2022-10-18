@@ -30,11 +30,11 @@ class ProdutoViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(preco__range=[preco_inicio, preco_fim]) 
         if ordenacao:
             if ordenacao.lower() == "true":
-                queryset = queryset.order_by('nome')
+                queryset = queryset.order_by('nome','preco')
 
         if ordenacao_reversa:
             if ordenacao_reversa.lower() == "true":
-                queryset = queryset.order_by('-nome')
+                queryset = queryset.order_by('-nome','-preco')
 
         return queryset
 

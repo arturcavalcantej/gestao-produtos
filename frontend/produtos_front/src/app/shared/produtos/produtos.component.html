@@ -134,18 +134,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let c of bens; let i=index">
-          <td class="text-center">{{c.id_produto}}</td>
+        <tr *ngFor="let produto of produtos; let i=index">
+          <td class="text-center">{{produto.id_produto}}</td>
 
-          <td class="text-center">{{ c.nome }}</td>
+          <td class="text-center">{{ produto.nome }}</td>
 
-          <td class="text-center">{{ c.descricao }}</td>
+          <td class="text-center">{{ produto.descricao }}</td>
 
-          <td class="text-center">{{ c.preco }}</td>
+          <td class="text-center">{{ produto.preco }}</td>
 
-          <td class="text-center">{{ c.status }}</td>
+          <td class="text-center">{{ produto.status }}</td>
 
-          <td>{{ c.imagem }}</td>
+          <td>{{ produto.imagem }}</td>
 
 
 
@@ -153,11 +153,11 @@
             <div
               class="d-flex flex-row align-items-center justify-content-center"
             >
-            <button type="button" class="btn btn-primary btn-sm" id="editar" [routerLink]="['..', 'editar', c.id_produto,]">
+            <button type="button" class="btn btn-primary btn-sm" id="editar" [routerLink]="['..', 'editar', produto.id_produto,]">
               <i class="bi bi-pencil"></i>
             </button>
             <button type="button" class="btn btn-primary purple-button btn-sm " id="botaolixo"
-              (click)="del(c.id_produto)" style=" margin-left: 20px;">
+              (click)="del(produto.id_produto)" style=" margin-left: 20px;">
               <i class="bi bi-trash "></i>
             </button>
             </div>
