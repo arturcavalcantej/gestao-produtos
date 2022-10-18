@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.contrib.contenttypes.models import ContentType
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Produtos
 from .serializers import ProdutosSerializer
@@ -71,3 +71,12 @@ class ProdutoViewSet(viewsets.ModelViewSet):
         produto.delete()
 
         return Response({'message': 'Produto removido com sucesso'})
+
+
+def pagination(request):
+    produtos = Produtos.objects.all()
+
+    produto_paginator = Paginator(produtos, 3)
+    page_num = request.GET.get('page')
+    page_obj = produto_paginator.get_page(page_num)
+    return render(request, 'pagination.html', {'page_obj': page_obj})

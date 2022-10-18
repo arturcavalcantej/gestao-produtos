@@ -24,6 +24,7 @@ router.register(r'produtos', views.ProdutoViewSet)
 
 
 urlpatterns = [
+    path('', views.pagination,name='pagination'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
