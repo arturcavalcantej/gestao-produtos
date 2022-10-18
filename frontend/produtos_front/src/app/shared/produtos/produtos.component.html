@@ -1,0 +1,106 @@
+<div class="card">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+      <div class="col">
+        <label for="id_produto" class="form-label">Id</label>
+        <input type="number" class="form-control" id="id_produto" formControlName='id_produto'>
+      </div>
+      <div class="col">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" formControlName='nome'>
+      </div>
+      <div class="col">
+        <label for="descricao" class="form-label">Descriçao</label>
+        <input type="text" class="form-control" id="descricao" formControlName='descricao'>
+      </div>
+      <div class="col">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="text" class="form-control" id="preco" formControlName='preco'>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+        <label for="status" class="form-label">Status
+        </label>
+        <input type="text" class="form-control" id="status" formControlName='status'>
+      </div>
+      <!-- <div class="col">
+        <label for="fim" class="form-label">Imagem
+        </label>
+        <input type="date" class="form-control" id="fim" formControlName='termino_garantia'>
+      </div> -->
+    </div>
+    <!--Botoes -->
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Adicionar
+      </button>
+    </div>
+    <!--//Botoes -->
+  </form>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">Tabela de produtos</h5>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">#</th>
+
+          <th class="text-center">Nome</th>
+
+          <th class="text-center">Descrição</th>
+
+          <th class="text-center">Preço</th>
+
+          <th class="text-center">Status</th>
+
+          <!-- <th class="text-center">Imagem</th> -->
+
+
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of bens; let i=index">
+          <td class="text-center">{{c.id_produto}}</td>
+
+          <td class="text-center">{{ c.nome }}</td>
+
+          <td class="text-center">{{ c.descricao }}</td>
+
+          <td class="text-center">{{ c.preco }}</td>
+
+          <td class="text-center">{{ c.status }}</td>
+
+          <!-- <td>{{ c.imagem }}</td> -->
+
+
+
+          <td class="text-center">
+            <div
+              class="d-flex flex-row align-items-center justify-content-center"
+            >
+            <button type="button" class="btn btn-primary btn-sm" id="editar">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button type="button" class="btn btn-primary purple-button btn-sm " id="botaolixo"
+              (click)="del(c.id_produto)" style=" margin-left: 20px;">
+              <i class="bi bi-trash "></i>
+            </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
