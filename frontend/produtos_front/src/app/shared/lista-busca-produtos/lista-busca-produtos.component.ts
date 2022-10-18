@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Produtos } from 'src/app/interface/produtos.interface';
+import { Prod, Produtos } from 'src/app/interface/produtos.interface';
 import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
@@ -9,8 +9,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
   styleUrls: ['./lista-busca-produtos.component.scss'],
 })
 export class ListaBuscaProdutosComponent implements OnInit {
-  bens: Produtos[] = [];
-
+  produtos: any
   constructor(
     private route: ActivatedRoute,
     private produtoService: ProdutosService
@@ -23,7 +22,7 @@ export class ListaBuscaProdutosComponent implements OnInit {
   private loadProdutos() {
     const params = this.route.snapshot.queryParams;
     this.produtoService.getAll(params).subscribe((res) => {
-      this.bens = res;
+      this.produtos = res.results;
     });
   }
 }

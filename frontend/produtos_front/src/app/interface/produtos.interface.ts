@@ -7,3 +7,11 @@ export interface Produtos {
   imagem: string;
 
 }
+
+
+export interface Prod{
+  count: number;
+  next: string;
+  previous: string;
+  results: Produtos[];
+}

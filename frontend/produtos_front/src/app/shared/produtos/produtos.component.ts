@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Produtos } from 'src/app/interface/produtos.interface';
+import { Prod, Produtos } from 'src/app/interface/produtos.interface';
 import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
@@ -12,8 +12,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 export class ProdutosComponent implements OnInit {
   formGroup!: FormGroup;
   formGroupBusca!: FormGroup;
-  produtos: Produtos[] = [];
-
+  teste: any
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,7 +43,7 @@ export class ProdutosComponent implements OnInit {
   private loadProdutos() {
     const params = this.route.snapshot.queryParams;
     this.produtoService.getAll(params).subscribe(res => {
-      this.produtos = res.results;
+      this.teste = res.results;
     });
   }
 

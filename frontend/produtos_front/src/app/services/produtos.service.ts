@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Params } from '@angular/router';
-import { Produtos } from '../interface/produtos.interface';
+import { Prod, Produtos } from '../interface/produtos.interface';
 
 const baseUrl = 'http://127.0.0.1:8000/api/produtos/';
 
@@ -14,7 +14,7 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
 
   getAll(queryParams: Params): Observable<any> {
-    return this.http.get<Produtos[]>(`${baseUrl}`,{
+    return this.http.get<Prod>(`${baseUrl}`,{
       params: queryParams,
     });
   }

@@ -26,18 +26,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let c of bens; let i=index">
-          <td class="text-center">{{c.id_produto}}</td>
+        <tr *ngFor="let prod of produtos; let i=index">
+          <td class="text-center">{{prod.id_produto}}</td>
 
-          <td class="text-center">{{ c.nome }}</td>
+          <td class="text-center">{{ prod.nome }}</td>
 
-          <td class="text-center">{{ c.descricao }}</td>
+          <td class="text-center">{{ prod.descricao }}</td>
 
-          <td class="text-center">{{ c.preco }}</td>
+          <td class="text-center">{{ prod.preco }}</td>
 
-          <td class="text-center">{{ c.status }}</td>
+          <td class="text-center">{{ prod.status }}</td>
 
-          <td>{{ c.imagem }}</td>
+          <td>{{ prod.imagem }}</td>
 
 
 

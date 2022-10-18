@@ -1,8 +1,6 @@
 version: "3"
 
-services:
-  db:
-    image: postgres
+services:     
   dj:
     container_name: dj
     build: .
@@ -11,5 +9,3 @@ services:
       - .:/code
     ports:
       - "80:80"
-    depends_on:
-      - db
