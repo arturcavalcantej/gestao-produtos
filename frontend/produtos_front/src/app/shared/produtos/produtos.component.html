@@ -1,4 +1,68 @@
 <div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">Consulta de produto</h5>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="formGroupBusca" (ngSubmit)="submit()">
+    <div class="row g-3">
+      <div class="col">
+        <label for="status" class="form-label">Status</label>
+        <input type="text" class="form-control" id="status" formControlName='status'>
+      </div>
+      <div class="col">
+        <label for="preco_inicio" class="form-label">Preço inicial</label>
+        <input type="text" class="form-control" id="preco_inicio" formControlName='preco_inicio'>
+      </div>
+      <div class="col">
+        <label for="preco_fim" class="form-label">Preço final</label>
+        <input type="text" class="form-control" id="preco_fim" formControlName='preco_fim'>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName="ordenacao"
+          />
+          <label class="form-check-label" for="ordenacao"> Ordenação </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName="ordenacao_reversa"
+          />
+          <label class="form-check-label" for="ordenacao_reversa"> Ordenação reversa </label>
+        </div>
+      </div>
+
+    </div>
+    <!--Botoes -->
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Buscar
+      </button>
+    </div>
+    <!--//Botoes -->
+  </form>
+</div>
+
+<!--Cadastro-->
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">Cadastrar produto</h5>
+      </div>
+    </div>
+  </div>
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="row g-3">
       <div class="col">
@@ -25,11 +89,11 @@
         </label>
         <input type="text" class="form-control" id="status" formControlName='status'>
       </div>
-      <!-- <div class="col">
-        <label for="fim" class="form-label">Imagem
+      <div class="col">
+        <label for="imagem" class="form-label">Imagem
         </label>
-        <input type="date" class="form-control" id="fim" formControlName='termino_garantia'>
-      </div> -->
+        <input type="text" class="form-control" id="imagem" formControlName='imagem'>
+      </div>
     </div>
     <!--Botoes -->
     <div class="modal-footer">
@@ -63,7 +127,7 @@
 
           <th class="text-center">Status</th>
 
-          <!-- <th class="text-center">Imagem</th> -->
+          <th class="text-center">Imagem</th>
 
 
           <th class="text-center">Ações</th>
@@ -81,7 +145,7 @@
 
           <td class="text-center">{{ c.status }}</td>
 
-          <!-- <td>{{ c.imagem }}</td> -->
+          <td>{{ c.imagem }}</td>
 
 
 
@@ -89,7 +153,7 @@
             <div
               class="d-flex flex-row align-items-center justify-content-center"
             >
-            <button type="button" class="btn btn-primary btn-sm" id="editar">
+            <button type="button" class="btn btn-primary btn-sm" id="editar" [routerLink]="['..', 'editar', c.id_produto,]">
               <i class="bi bi-pencil"></i>
             </button>
             <button type="button" class="btn btn-primary purple-button btn-sm " id="botaolixo"

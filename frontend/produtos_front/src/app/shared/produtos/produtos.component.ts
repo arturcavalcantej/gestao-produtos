@@ -27,6 +27,7 @@ export class ProdutosComponent implements OnInit {
   ngOnInit(): void {
     this.loadProdutos();
     this._createForm();
+    this._createFormBusca();
   }
 
   private _createForm() {
@@ -36,6 +37,7 @@ export class ProdutosComponent implements OnInit {
       status: new FormControl(null),
       preco: new FormControl(),
       descricao: new FormControl(),
+      imagem: new FormControl(),
     });
   }
 
@@ -59,17 +61,24 @@ export class ProdutosComponent implements OnInit {
       this.ngOnInit();
     })
   }
-
-
+// Busca do queryparams
+  private _createFormBusca() {
+    this.formGroupBusca = this.formBuilder.group({
+      status: new FormControl(null),
+      preco_inicio: new FormControl(null),
+      preco_fim: new FormControl(null),
+      ordenacao: new FormControl(false),
+      ordenacao_reversa: new FormControl(false),
+    });
+  }
 
 
   submit = () => {
     const data = this.formGroupBusca.value
     const query = {
       status: data.status,
-      preco_inicio: data.comprador,
-      preco_final: data.preco_final,
-      descricao: data.descricao,
+      preco_inicio: data.preco_inicio,
+      preco_fim: data.preco_fim,
       ordenacao: data.ordenacao,
       ordenacao_reversa: data.ordenacao_reversa,
     }

@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">Editar produto</h5>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+      <div class="col">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" formControlName='nome'>
+      </div>
+      <div class="col">
+        <label for="descricao" class="form-label">Descriçao</label>
+        <input type="text" class="form-control" id="descricao" formControlName='descricao'>
+      </div>
+      <div class="col">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="text" class="form-control" id="preco" formControlName='preco'>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col">
+        <label for="status" class="form-label">Status
+        </label>
+        <input type="text" class="form-control" id="status" formControlName='status'>
+      </div>
+      <div class="col">
+        <label for="imagem" class="form-label">Imagem
+        </label>
+        <input type="text" class="form-control" id="imagem" formControlName='imagem'>
+      </div>
+    </div>
+    <!--Botoes -->
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar
+      </button>
+    </div>
+    <!--//Botoes -->
+  </form>
+</div>

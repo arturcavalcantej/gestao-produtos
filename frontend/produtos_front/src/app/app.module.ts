@@ -6,11 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProdutosComponent } from './shared/produtos/produtos.component';
+import { ListaBuscaProdutosComponent } from './shared/lista-busca-produtos/lista-busca-produtos.component';
+import { EditarProdutoComponent } from './shared/editar-produto/editar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProdutosComponent
+    ProdutosComponent,
+    ListaBuscaProdutosComponent,
+    EditarProdutoComponent
   ],
   imports: [
     BrowserModule,

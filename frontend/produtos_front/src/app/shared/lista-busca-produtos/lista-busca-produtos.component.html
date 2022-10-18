@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">Tabela de produtos</h5>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">#</th>
+
+          <th class="text-center">Nome</th>
+
+          <th class="text-center">Descrição</th>
+
+          <th class="text-center">Preço</th>
+
+          <th class="text-center">Status</th>
+
+          <th class="text-center">Imagem</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of bens; let i=index">
+          <td class="text-center">{{c.id_produto}}</td>
+
+          <td class="text-center">{{ c.nome }}</td>
+
+          <td class="text-center">{{ c.descricao }}</td>
+
+          <td class="text-center">{{ c.preco }}</td>
+
+          <td class="text-center">{{ c.status }}</td>
+
+          <td>{{ c.imagem }}</td>
+
+
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

@@ -23,9 +23,9 @@ export class ProdutosService {
     return this.http.post(baseUrl, data);
   }
 
-  // update(id, data): Observable<any> {
-  //   return this.http.put(`${baseUrl}/${id}`, data);
-  // }
+  update(id: number, data: Produtos): Observable<any> {
+    return this.http.patch(`${baseUrl}${id}/`, data);
+  }
 
   delete(id: number): Observable<any> {
     return this.http.delete<Produtos>(`${baseUrl}${id}/`);
