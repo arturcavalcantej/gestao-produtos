@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .paginations import StandardResultsSetPagination
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.contrib.contenttypes.models import ContentType
@@ -11,9 +12,10 @@ from .serializers import ProdutosSerializer
 
 
 class ProdutoViewSet(viewsets.ModelViewSet):
-    model = Produtos
+    
     queryset = Produtos.objects.all()
     serializer_class = ProdutosSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         ordenacao = self.request.query_params.get('ordenacao', None)

@@ -37,7 +37,6 @@ router.register(r'produtos', views.ProdutoViewSet)
 
 
 urlpatterns = [
-    path('', views.pagination,name='pagination'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('swagger/schema/', schema_view.with_ui('swagger', cache_timeout=0), name="swagger-schema"),

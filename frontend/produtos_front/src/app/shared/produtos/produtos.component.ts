@@ -44,7 +44,7 @@ export class ProdutosComponent implements OnInit {
   private loadProdutos() {
     const params = this.route.snapshot.queryParams;
     this.produtoService.getAll(params).subscribe(res => {
-      this.produtos = res;
+      this.produtos = res.results;
     });
   }
 
