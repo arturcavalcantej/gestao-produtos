@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Prod, Produtos } from 'src/app/interface/produtos.interface';
+import { ActivatedRoute } from '@angular/router';
 import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
@@ -18,7 +17,6 @@ export class ProdutosComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    private router: Router,
 
   ) {}
 
@@ -59,6 +57,4 @@ export class ProdutosComponent implements OnInit {
       this.ngOnInit();
     })
   }
-// Busca do queryparams
-
 }

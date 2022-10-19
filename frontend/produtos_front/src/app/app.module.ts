@@ -11,6 +11,7 @@ import { EditarProdutoComponent } from './shared/editar-produto/editar-produto.c
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ConsultarProdutosComponent } from './shared/consultar-produtos/consultar-produtos.component';
+import { AtivoPipe } from './pipe/ativo.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ConsultarProdutosComponent } from './shared/consultar-produtos/consulta
     EditarProdutoComponent,
     NavbarComponent,
     SidebarComponent,
-    ConsultarProdutosComponent
+    ConsultarProdutosComponent,
+    AtivoPipe
   ],
   imports: [
     BrowserModule,
