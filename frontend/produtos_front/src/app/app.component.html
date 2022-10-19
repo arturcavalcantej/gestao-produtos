@@ -1,13 +1,20 @@
 <!-- Navbar-->
-<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
 <!-- //Navbar-->
 <!-- Page Wrapped-->
 <div class="d-flex">
   <!--sidebar-->
+  <app-sidebar></app-sidebar>
+
   <!-- //sidebar-->
   <div class="d-flex flex-column flex-fill ">
     <div class="container-fluid mt-1">
-
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Inicio</a></li>
+          <li class="breadcrumb-item active"><a routerLink="/consultar">Consultar</a></li>
+        </ol>
+      </nav>
       <router-outlet></router-outlet>
 
     </div>

@@ -20,14 +20,20 @@
         <label for="preco" class="form-label">Preço</label>
         <input type="text" class="form-control" id="preco" formControlName='preco'>
       </div>
+      <div class="col">
+        <div class="form-check" style="margin: 30px;">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName="status"
+          />
+          <label class="form-check-label" for="status"> Status </label>
+        </div>
+      </div>
     </div>
 
     <div class="row g-3">
-      <div class="col">
-        <label for="status" class="form-label">Status
-        </label>
-        <input type="text" class="form-control" id="status" formControlName='status'>
-      </div>
+
       <div class="col">
         <label for="imagem" class="form-label">Imagem
         </label>

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Params } from '@angular/router';
 import { Prod, Produtos } from '../interface/produtos.interface';
 
-const baseUrl = 'http://127.0.0.1:8000/api/produtos/';
+const baseUrl = 'http://localhost/api/produtos/';
 
 @Injectable({
   providedIn: 'root'

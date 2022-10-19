@@ -7,7 +7,7 @@ class Produtos(models.Model):
     nome = models.CharField(max_length=100,null=True)
     preco = models.FloatField(null=True)
     descricao = models.CharField(max_length=100,null=True)
-    status = models.CharField(max_length=10,null=True)
+    status = models.BooleanField(default=True)
     imagem = models.URLField(max_length=200, null=True, blank=True)
     class Meta:
         ordering = ['nome']

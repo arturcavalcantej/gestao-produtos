@@ -24,9 +24,9 @@ from drf_yasg.views import get_schema_view as swagger_get_schema_view
 
 schema_view = swagger_get_schema_view(
     openapi.Info(
-        title="Posts API",
+        title="Produtos API",
         default_version='1.0.0',
-        description="API documentation of App",
+        description="API documentation of Produtos",
     ),
     public=True,
 )

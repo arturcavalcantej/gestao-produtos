@@ -1,13 +1,12 @@
 export interface Produtos {
   id_produto: number;
   nome: string;
-  status: string;
+  status: boolean;
   preco: string;
   descricao: string;
   imagem: string;
 
 }
-
 
 export interface Prod{
   count: number;

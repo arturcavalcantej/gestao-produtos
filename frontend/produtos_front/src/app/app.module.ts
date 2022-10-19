@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { ProdutosComponent } from './shared/produtos/produtos.component';
 import { ListaBuscaProdutosComponent } from './shared/lista-busca-produtos/lista-busca-produtos.component';
 import { EditarProdutoComponent } from './shared/editar-produto/editar-produto.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { ConsultarProdutosComponent } from './shared/consultar-produtos/consultar-produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProdutosComponent,
     ListaBuscaProdutosComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    NavbarComponent,
+    SidebarComponent,
+    ConsultarProdutosComponent
   ],
   imports: [
     BrowserModule,

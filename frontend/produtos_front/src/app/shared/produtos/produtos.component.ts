@@ -26,14 +26,13 @@ export class ProdutosComponent implements OnInit {
   ngOnInit(): void {
     this.loadProdutos();
     this._createForm();
-    this._createFormBusca();
   }
 
   private _createForm() {
     this.formGroup = this.formBuilder.group({
       id_produto: new FormControl(''),
       nome: new FormControl(null),
-      status: new FormControl(null),
+      status: new FormControl(true),
       preco: new FormControl(null),
       descricao: new FormControl(null),
       imagem: new FormControl(null),
@@ -61,30 +60,5 @@ export class ProdutosComponent implements OnInit {
     })
   }
 // Busca do queryparams
-  private _createFormBusca() {
-    this.formGroupBusca = this.formBuilder.group({
-      status: new FormControl(null),
-      preco_inicio: new FormControl(null),
-      preco_fim: new FormControl(null),
-      ordenacao: new FormControl(false),
-      ordenacao_reversa: new FormControl(false),
-    });
-  }
-
-
-  submit = () => {
-    const data = this.formGroupBusca.value
-    const query = {
-      status: data.status,
-      preco_inicio: data.preco_inicio,
-      preco_fim: data.preco_fim,
-      ordenacao: data.ordenacao,
-      ordenacao_reversa: data.ordenacao_reversa,
-    }
-    this.router.navigate(['../listar/'], {
-      queryParams: query,
-      relativeTo: this.route,
-    })
-  }
 
 }
