@@ -3,7 +3,7 @@ Projeto desenvolvido em Angular v13.x , Django v4.x , Docker e Bootstrap
 
 Funcionalidades : CRUD, Listagem, Webservice de consulta, paginação no backend, swagger com endpoints
 
-Primeiramente clonar o repositorio, apo isso seguir as duas etapas:  
+Primeiramente clonar o repositório, após isso seguir as duas etapas(em dois terminais):  
 
 # Como executar Backend
 No caminho backend/GestaoProdutos digite:
