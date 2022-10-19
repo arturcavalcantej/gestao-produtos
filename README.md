@@ -6,8 +6,13 @@ Funcionalidades : CRUD, Listagem, Webservice de consulta, paginação no backend
 # Como executar Backend
 No caminho backend/GestaoProdutos digite:
 ```
-docker-compose up --build
+docker-compose build
 ```
+Depois digite:
+```
+docker-compose up
+```
+
 
 Acessar a aplicação backend em:
 
