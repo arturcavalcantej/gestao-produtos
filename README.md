@@ -12,7 +12,7 @@ docker-compose up --build
 Acessar a aplicação backend em:
 
 ```
-http://localhost/api/
+http://localhost/api/produtos/
 ```
 
 Acessar o swagger:
