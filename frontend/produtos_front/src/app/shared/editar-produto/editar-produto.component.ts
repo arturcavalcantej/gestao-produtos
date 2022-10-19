@@ -7,22 +7,18 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 @Component({
   selector: 'app-editar-produto',
   templateUrl: './editar-produto.component.html',
-  styleUrls: ['./editar-produto.component.scss']
+  styleUrls: ['./editar-produto.component.scss'],
 })
 export class EditarProdutoComponent implements OnInit {
-
   formGroup!: FormGroup;
   bens: Produtos[] = [];
-
 
   constructor(
     private formBuilder: FormBuilder,
     private produtoService: ProdutosService,
     private route: ActivatedRoute,
     private router: Router
-
   ) {}
-
 
   ngOnInit(): void {
     this._createForm();
@@ -38,18 +34,13 @@ export class EditarProdutoComponent implements OnInit {
     });
   }
 
-
-  onSubmit(){
-    this.produtoService.update(this.route.snapshot.params['id'],this.formGroup.value).subscribe(res=>{
-      this.ngOnInit();
-    })
-
-    this.router.navigate(['../../'], {
-      relativeTo: this.route,
-    })
+  onSubmit() {
+    this.produtoService
+      .update(this.route.snapshot.params['id'], this.formGroup.value)
+      .subscribe((res) => {
+        this.router.navigate(['../../'], {
+          relativeTo: this.route,
+        });
+      });
   }
-
-
 }
-
-
