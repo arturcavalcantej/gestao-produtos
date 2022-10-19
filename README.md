@@ -1,5 +1,6 @@
 # Gestão Produtos
 Projeto desenvolvido em Angular v13.x e Django v4.x
+
 Funcionalidades : CRUD, Listagem, Webservice de consulta, paginação no backend, swagger com edpoints
 
 # Como executar Backend
