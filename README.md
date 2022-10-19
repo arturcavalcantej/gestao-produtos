@@ -1,7 +1,7 @@
 # Gestão Produtos
-Projeto desenvolvido em Angular v13.x , Django v4.x e Docker
+Projeto desenvolvido em Angular v13.x , Django v4.x , Docker e Bootstrap
 
-Funcionalidades : CRUD, Listagem, Webservice de consulta, paginação no backend, swagger com edpoints
+Funcionalidades : CRUD, Listagem, Webservice de consulta, paginação no backend, swagger com endpoints
 
 # Como executar Backend
 No caminho backend/GestaoProdutos digite:
@@ -12,8 +12,6 @@ Depois digite:
 ```
 docker-compose up
 ```
-
-
 Acessar a aplicação backend em:
 
 ```
