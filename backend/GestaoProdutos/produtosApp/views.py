@@ -27,8 +27,10 @@ class ProdutoViewSet(viewsets.ModelViewSet):
         queryset = Produtos.objects.all()
 
         if status:
-            if status == 'true':
+            if status.lower() == 'true':
                 queryset = queryset.filter(status=True)
+            else:
+                queryset = queryset.filter(status=False)
         if preco_inicio and preco_fim:
             queryset = queryset.filter(preco__range=[preco_inicio, preco_fim]) 
         if ordenacao:

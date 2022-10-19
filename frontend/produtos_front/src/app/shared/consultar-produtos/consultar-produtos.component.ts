@@ -22,7 +22,7 @@ export class ConsultarProdutosComponent implements OnInit {
 
   private _createFormBusca() {
     this.formGroupBusca = this.formBuilder.group({
-      status: new FormControl(null),
+      status: new FormControl(false),
       preco_inicio: new FormControl(null),
       preco_fim: new FormControl(null),
       ordenacao: new FormControl(false),
