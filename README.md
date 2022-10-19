@@ -21,7 +21,7 @@ http://localhost/swagger/schema/
 ```
 
 # Como executar Frontend
-No caminho frontend/produtos_front, executar:
+No caminho frontend/produtos_front executar:
 ```
 npm install
 ```
